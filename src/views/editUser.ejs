@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="/" class="home active">Home</a>
+        <a href="/upload-file">Upload File</a>
+    </div>
+
+    <h1 style="text-align: center;">Edit User</h1>
+    <form action="/update-user/<%= user.id %>" method="POST" class="form-user" data-id="<%= user.id %>">
+        <label for="full-name">Fullname</label>
+        <input type="text" id="full-name" value="<%= user.fullname %>" name="fullname" required><br>
+        <label for="address">Address</label>
+        <input type="text" id="address" value="<%= user.address %>" name="address" required><br>
+        <label for="email">Email</label>
+        <input type="email" id="email" value="<%= user.email %>" name="email" required> <br>
+        <button type="submit" class="btn-submit">Submit</button>
+    </form>
+
+    <!-- <script>
+        let btnSubmit = document.querySelector('.btn-submit');
+        let dataId = document.querySelector('.form-user').dataset.id;
+        btnSubmit.onclick = () => {
+            let conditionConfirm = confirm("Do you want to edit ???");
+            if (conditionConfirm) {
+                window.location.href = `/update-user/${dataId}`;
+            } else {
+                window.location.href = `/edit-user/${dataId}`;
+            }
+        }
+    </script> -->
+
+</body>
+
+</html>
